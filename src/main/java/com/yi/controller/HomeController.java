@@ -41,4 +41,9 @@ public class HomeController {
 		return "replyTest";
 	}
 	
+	@RequestMapping(value = "temp1", method = RequestMethod.GET)
+	public String temp1() {
+		return "handlebars1";
+	}
+	
 }
