@@ -56,4 +56,9 @@ public class HomeController {
 		return "handlebars3";
 	}
 	
+	@RequestMapping(value = "member", method = RequestMethod.GET)
+	public String member() {
+		return "memberAjax";
+	}
+	
 }
