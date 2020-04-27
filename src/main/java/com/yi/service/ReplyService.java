@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.yi.domain.Criteria;
 import com.yi.domain.ReplyVO;
@@ -32,5 +33,13 @@ public class ReplyService {
 	}
 	public int totalCount(int bno) throws Exception{
 		return dao.totalCount(bno);
+	}
+	
+	@Transactional //해당 함수에 transaction 기능 구현 처리(aop로 구현됨)
+	public List<ReplyVO> listPageTest(int bno, Criteria cri) throws Exception{
+		List<ReplyVO> list = dao.listPage(bno, cri);
+		dao.totalCount(bno);
+		
+		return list;
 	}
 }

@@ -98,7 +98,7 @@ public class ReplyController {
 			pageMaker.setCri(cri);
 			pageMaker.setTotalCount(service.totalCount(bno));
 			
-			List<ReplyVO> list = service.listPage(bno, cri);
+			List<ReplyVO> list = service.listPageTest(bno, cri);
 			
 			Map<String, Object> map = new HashMap<String, Object>();
 			map.put("list", list);
